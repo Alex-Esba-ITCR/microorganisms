@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class MicroorganismosNPC {
+public class Microorganismo {
     // Atributos
     private int id;
     private int energia;
@@ -19,7 +19,7 @@ public class MicroorganismosNPC {
     private int y;
 
     // Constructor
-    public MicroorganismosNPC(){
+    public Microorganismo(){
         Random random = new Random();
         this.id = random.nextInt(99999);
         this.energia = 50;
@@ -197,41 +197,45 @@ public class MicroorganismosNPC {
     }
 
     // Métodos
-    public void moverse(){
-        while (this.energia > 0){
-            Random random = new Random();
-            int direccion = random.nextInt(4);
-            switch (direccion) {
-                case 0 -> {
-                    if (this.x + this.velocidad >= 50) {
-                        break;
-                    }
-                    this.x += random.nextInt(this.velocidad + 1);
-                    this.energia -= 1;
+    public void moverse(int direccion){
+        Random random = new Random();
+        switch (direccion) {
+            case 0 -> {
+                if (this.getX() + this.getVelocidad() >= 50) {
+                    this.setX(this.getX() - random.nextInt(this.getVelocidad() + 1));
+                    this.setEnergia(this.getEnergia() - 1);
+                    break;
                 }
-                case 1 -> {
-                    if (this.x - this.velocidad < 0) {
-                        break;
-                    }
-                    this.x -= random.nextInt(this.velocidad + 1);
-                    this.energia -= 1;
+                this.setX(this.getX() + random.nextInt(this.getVelocidad() + 1));
+                this.setEnergia(this.getEnergia() - 1);
+            }
+            case 1 -> {
+                if (this.getX() - this.getVelocidad() < 0) {
+                    this.setX(this.getX() + random.nextInt(this.getVelocidad() + 1));
+                    this.setEnergia(this.getEnergia() - 1);
+                    break;
                 }
-                case 2 -> {
-                    if (this.y + this.velocidad >= 50) {
-                        break;
-                    }
-                    this.y += random.nextInt(this.velocidad + 1);
-                    this.energia -= 1;
+                this.setX(this.getX() - random.nextInt(this.getVelocidad() + 1));
+                this.setEnergia(this.getEnergia() - 1);
+            }
+            case 2 -> {
+                if (this.getY() + this.getVelocidad() >= 50) {
+                    this.setY(this.getY() - random.nextInt(this.getVelocidad() + 1));
+                    this.setEnergia(this.getEnergia() - 1);
+                    break;
                 }
-                case 3 -> {
-                    if (this.y - this.velocidad < 0) {
-                        break;
-                    }
-                    this.y -= random.nextInt(this.velocidad + 1);
-                    this.energia -= 1;
+                this.setY(this.getY() + random.nextInt(this.getVelocidad() + 1));
+                this.setEnergia(this.getEnergia() - 1);
+            }
+            case 3 -> {
+                if (this.getY() - this.getVelocidad() < 0) {
+                    this.setY(this.getY() + random.nextInt(this.getVelocidad() + 1));
+                    this.setEnergia(this.getEnergia() - 1);
+                    break;
                 }
+                this.setY(this.getY() - random.nextInt(this.getVelocidad() + 1));
+                this.setEnergia(this.getEnergia() - 1);
             }
         }
     }
-
 }
