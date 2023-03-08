@@ -1,8 +1,7 @@
 import java.util.Random;
 
-public class Microorganismo {
+public class Microorganismo extends Entidad{
     // Atributos
-    private int id;
     private int energia;
     private int vision;
     private int velocidad;
@@ -15,29 +14,19 @@ public class Microorganismo {
     private int MIN_VISION = 1;
     private int MIN_VELOCIDAD = 1;
     private int MIN_EDAD = 0;
-    private int x;
-    private int y;
 
     // Constructor
     public Microorganismo(){
         Random random = new Random();
-        this.id = random.nextInt(99999);
+        this.setId(random.nextInt(99999));
         this.energia = 50;
         this.vision = MIN_VISION;
         this.velocidad = MIN_VELOCIDAD;
-        this.x = random.nextInt(50);
-        this.y = random.nextInt(50);
+        this.setX(random.nextInt(50));
+        this.setY(random.nextInt(50));
     }
 
     // Getters y Setters
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public int getEnergia() {
         return energia;
     }
@@ -158,27 +147,11 @@ public class Microorganismo {
         this.MIN_EDAD = MIN_EDAD;
     }
 
-    public int getX() {
-        return x;
-    }
-
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    public int getY() {
-        return y;
-    }
-
-    public void setY(int y) {
-        this.y = y;
-    }
-
     // toString
     @Override
     public String toString() {
         return "MicroorganismosNPC{" +
-                "id=" + id +
+                "id=" + getId() +
                 ", energia=" + energia +
                 ", vision=" + vision +
                 ", velocidad=" + velocidad +
@@ -191,8 +164,8 @@ public class Microorganismo {
                 ", MIN_VISION=" + MIN_VISION +
                 ", MIN_VELOCIDAD=" + MIN_VELOCIDAD +
                 ", MIN_EDAD=" + MIN_EDAD +
-                ", x=" + x +
-                ", y=" + y +
+                ", x=" + getX() +
+                ", y=" + getY() +
                 '}';
     }
 

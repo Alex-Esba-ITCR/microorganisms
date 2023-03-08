@@ -1,7 +1,13 @@
 public class AlimentoVelocidad extends Alimento{
+    // Constructor
     public AlimentoVelocidad() {
         super();
-        this.type = "Velocidad";
+    }
+
+    // toString
+    @Override
+    public String toString() {
+        return "AlimentoVelocidad [id=" + this.getId() + ", tamano=" + this.getTamano() + ", x=" + this.getX() + ", y=" + this.getY() + "]";
     }
 
 }

@@ -1,8 +1,13 @@
 public class AlimentoEnergia extends Alimento{
-    //Constructor
-
+    // Constructor
     public AlimentoEnergia() {
         super();
-        this.type = "Energia";
     }
+
+    // toString
+    @Override
+    public String toString() {
+        return "AlimentoEnergia [id=" + this.getId() + ", tamano=" + this.getTamano() + ", x=" + this.getX() + ", y=" + this.getY() + "]";
+    }
+
 }

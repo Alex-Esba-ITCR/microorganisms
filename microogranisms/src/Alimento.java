@@ -1,72 +1,48 @@
 import java.util.Random;
-public class Alimento {
-    //Atributos
-    private int id;
+public class Alimento extends Entidad {
+    // Atributos
+    private int tamano;
+    private int MAX_TAMANO = 10;
+    private int MIN_TAMANO = 1;
 
-    public String type;
-    private int size;
-
-    private int x;
-
-    private int y;
-
-    //Constructor
-    public Alimento() {
+    // Constructor
+    public Alimento(){
         Random random = new Random();
-        this.id = random.nextInt(99999);
-        this.size = random.nextInt(1,4);
-        this.x = random.nextInt(50);
-        this.y = random.nextInt(50);
+        this.setId(random.nextInt(99999));
+        this.tamano = random.nextInt(MAX_TAMANO + 1);
+        this.setX(random.nextInt(50));
+        this.setY(random.nextInt(50));
     }
 
-    //Getters y Setters
-    public int getId() {return id;}
-
-    public void setId(int id) {this.id = id;}
-
-    public int getSize() {return size;}
-
-    public void setSize(int size) {this.size = size;}
-
-    public int getX() {return x;}
-
-    public void setX(int x) {
-        if (x > 50){
-            x = 50;
-        }
-        if (x < 0){
-            x = 0;
-        }
-        this.x = x;
+    // Getters y Setters
+    public int getTamano() {
+        return tamano;
     }
 
-    public int getY() {return y;}
-
-    public void setY(int y) {
-        if (y > 50){
-            y = 50;
-        }
-        if (y < 0){
-            y = 0;
-        }
-        this.y = y;
+    public void setTamano(int tamano) {
+        this.tamano = tamano;
     }
 
-    public String getType() {return type;}
-
-    public void setType(String type) {this.type = type;}
-
-    public String toString(){
-        return "ID: " + this.id + " Size: " + this.size + " X: " + this.x + " Y: " + this.y + " Type: " + this.type;
+    public int getMAX_TAMANO() {
+        return MAX_TAMANO;
     }
-    /*public static void main(String[] args) {
-        Alimento alimentos[] = new Alimento[3];
-        alimentos[0] = new AlimentoVelocidad();
-        alimentos[1] = new AlimentoEnergia();
-        alimentos[2] = new AlimentoVision();
 
-        for (int i = 0; i < alimentos.length; i++) {
-            System.out.println(alimentos[i].toString());
-        }
-    }*/
+    public void setMAX_TAMANO(int MAX_TAMANO) {
+        this.MAX_TAMANO = MAX_TAMANO;
+    }
+
+    public int getMIN_TAMANO() {
+        return MIN_TAMANO;
+    }
+
+    public void setMIN_TAMANO(int MIN_TAMANO) {
+        this.MIN_TAMANO = MIN_TAMANO;
+    }
+
+    // toString
+    @Override
+    public String toString() {
+        return "Alimento [id=" + this.getId() + ", tamano=" + tamano + ", x=" + this.getX() + ", y=" + this.getY() + "]";
+    }
+
 }
