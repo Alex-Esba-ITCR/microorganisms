@@ -7,6 +7,11 @@ public class AlimentoVision extends Alimento{
     // toString
     @Override
     public String toString() {
-        return "AlimentoVision [id=" + this.getId() + ", tamano=" + this.getTamano() + ", x=" + this.getX() + ", y=" + this.getY() + "]";
+        return "AlimentoVision [id=" + this.getId() + ", x=" + this.getX() + ", y=" + this.getY() + "]";
+    }
+    // por ahora se le va a aumentar la vision en 2 para ejemplificar
+    @Override
+    public void serComido(Microorganismo microorganismo) {
+        microorganismo.setVision(microorganismo.getVision() + 2);
     }
 }
