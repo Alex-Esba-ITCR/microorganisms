@@ -1,5 +1,6 @@
 public class Simulacion {
     public static void main(String[] args) {
+        /*
         NPC npc = new NPC();
         Jugador jugador = new Jugador();
         AlimentoEnergia alimentoEnergia = new AlimentoEnergia();
@@ -14,6 +15,10 @@ public class Simulacion {
         for (Entidad entidad : entidades) {
             System.out.println();
         }
+        */
+        Mapa mapa = new Mapa(50);
+        mapa.generarMapa();
 
+        mapa.imprimirMapa();
     }
 }

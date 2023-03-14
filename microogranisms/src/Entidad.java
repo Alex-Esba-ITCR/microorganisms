@@ -6,6 +6,7 @@ public class Entidad {
     private int x;
     private int y;
 
+
     // Constructor
     public Entidad(){
         Random random = new Random();

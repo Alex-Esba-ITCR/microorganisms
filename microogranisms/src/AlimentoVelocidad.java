@@ -1,7 +1,7 @@
 public class AlimentoVelocidad extends Alimento{
     // Constructor
     public AlimentoVelocidad() {
-        super();
+         super();
     }
 
     // toString

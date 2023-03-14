@@ -6,6 +6,26 @@ public class Jugador extends Microorganismo{
         this.setY(24);
     }
 
+    public void comer(Alimento alimento){
+        alimento.serComido(this);
+    }
+
+    public void moverseIzquierda(){
+        this.setX(this.getX() - 1);
+    }
+
+    public void moverseDerecha(){
+        this.setX(this.getX() + 1);
+    }
+
+    public void moverseArriba(){
+        this.setY(this.getY() - 1);
+    }
+
+    public void moverseAbajo(){
+        this.setY(this.getY() + 1);
+    }
+
     // toString
     @Override
     public String toString() {
